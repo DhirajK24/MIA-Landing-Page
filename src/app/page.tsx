@@ -89,8 +89,8 @@ function PixelWordmark({ inverted = false }: { inverted?: boolean }) {
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#366CC5" />
-          <stop offset="0.58" stopColor="#366CC5" />
-          <stop offset="1" stopColor="#A9B5B9" />
+          <stop offset="0.5" stopColor={inverted ? "#4D8DF7" : "#366CC5"} />
+          <stop offset="1" stopColor={inverted ? "#C5D7EC" : "#A9B5B9"} />
         </linearGradient>
       </defs>
       {cells.map(({ x, y, letter, index }) => (

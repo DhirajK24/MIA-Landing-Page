@@ -123,10 +123,10 @@ function generateWordmarkSvg(inverted = false) {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="1000" height="200" fill="none">
   <defs>
-    <linearGradient id="${gradientId}" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stopColor="#366CC5" />
-      <stop offset="0.58" stopColor="#366CC5" />
-      <stop offset="1" stopColor="#A9B5B9" />
+    <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#366CC5" />
+      <stop offset="50%" stop-color="${inverted ? '#4D8DF7' : '#366CC5'}" />
+      <stop offset="100%" stop-color="${inverted ? '#C5D7EC' : '#A9B5B9'}" />
     </linearGradient>
   </defs>
   <g>${rects}</g>
