@@ -6,8 +6,7 @@
       <stop offset="1" stopColor="#A9B5B9" />
     </linearGradient>
   </defs>
-  <g>
-    <rect x="0" y="0" width="49" height="21" fill="#FEFEF7" />
+  <g><rect x="0" y="0" width="49" height="21" fill="#FEFEF7" />
     <rect x="220" y="0" width="49" height="21" fill="#FEFEF7" />
     <rect x="0" y="27" width="49" height="21" fill="#FEFEF7" />
     <rect x="55" y="27" width="49" height="21" fill="#FEFEF7" />
@@ -57,6 +56,5 @@
     <rect x="676" y="135" width="49" height="21" fill="url(#mia-blue-dark)" />
     <rect x="896" y="135" width="49" height="21" fill="url(#mia-blue-dark)" />
     <rect x="676" y="162" width="49" height="21" fill="url(#mia-blue-dark)" />
-    <rect x="896" y="162" width="49" height="21" fill="url(#mia-blue-dark)" />
-  </g>
+    <rect x="896" y="162" width="49" height="21" fill="url(#mia-blue-dark)" /></g>
 </svg>

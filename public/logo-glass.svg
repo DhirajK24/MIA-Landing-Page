@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <linearGradient id="glassBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.96"/>
+      <stop offset="35%" stop-color="#F2F7FD" stop-opacity="0.90"/>
+      <stop offset="70%" stop-color="#E2EEFC" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#D0E5FC" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <linearGradient id="glassBorder" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.60"/>
+      <stop offset="100%" stop-color="#9BC4F5" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <linearGradient id="glassGloss" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="blueBlocks" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A84F7"/>
+      <stop offset="50%" stop-color="#2D78EE"/>
+      <stop offset="100%" stop-color="#1B63D8"/>
+    </linearGradient>
+
+    <filter id="glassOuterShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#366CC5" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0F387A" flood-opacity="0.10"/>
+    </filter>
+
+    <filter id="blockSoftShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#1A51B0" flood-opacity="0.26"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#glassOuterShadow)">
+    <rect x="28" y="24" width="456" height="456" rx="108" fill="url(#glassBg)"/>
+    <rect x="28" y="24" width="456" height="456" rx="108" stroke="url(#glassBorder)" stroke-width="3"/>
+  </g>
+
+  <path d="M 28 132 C 28 65, 80 24, 136 24 L 376 24 C 432 24, 484 65, 484 132 C 484 180, 410 240, 256 240 C 102 240, 28 180, 28 132 Z" fill="url(#glassGloss)" opacity="0.6"/>
+
+  <g filter="url(#blockSoftShadow)">
+    <rect x="100" y="96" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="209" y="96" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="100" y="154" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="318" y="154" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="100" y="212" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="209" y="212" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="318" y="212" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="209" y="270" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="318" y="270" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="209" y="328" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="318" y="328" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="209" y="386" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+    <rect x="318" y="386" width="94" height="44" rx="4" fill="url(#blueBlocks)" />
+  </g>
+</svg>
