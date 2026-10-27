@@ -38,11 +38,11 @@ const platforms: Record<Platform, PlatformConfig> = {
     id: "windows",
     name: "Windows",
     badge: "Windows 11 / 10",
-    fileName: "MIA-Desktop-v0.4.1-Setup.exe",
-    fileSize: "68.4 MB",
-    arch: "x64 & ARM64",
-    installerType: "Installer (.exe)",
-    downloadUrl: "/downloads/MIA-Desktop-v0.4.1-Setup.exe",
+    fileName: "MIA_0.4.1_x64-setup.exe",
+    fileSize: "57.4 MB",
+    arch: "x64 (NSIS Installer)",
+    installerType: "NSIS Setup (.exe)",
+    downloadUrl: "/downloads/MIA_0.4.1_x64-setup.exe",
     cliCommand: "winget install mia.desktop",
     cliLabel: "Windows Package Manager",
   },
@@ -412,9 +412,9 @@ export function DownloadModal({
 
             {/* Modal Footer */}
             <div className="px-6 py-3 border-t border-[#030302]/10 bg-[#030302]/5 flex items-center justify-between text-[10px] font-mono text-[#030302]/50">
-              <span>SHA-256 Code Signed · Open Source Core</span>
+              <span>SHA-256: 0D520AE5... · NSIS Code Signed</span>
               <a
-                href="https://github.com"
+                href="https://github.com/DhirajK24/MIA-Landing-Page/releases"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-[#366CC5] inline-flex items-center gap-1"
