@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="1000" height="200" fill="none">
+  <defs>
+    <linearGradient id="mia-blue-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor="#366CC5" />
+      <stop offset="0.58" stopColor="#366CC5" />
+      <stop offset="1" stopColor="#A9B5B9" />
+    </linearGradient>
+  </defs>
+  <g>
+    <rect x="0" y="0" width="49" height="21" fill="#FEFEF7" />
+    <rect x="220" y="0" width="49" height="21" fill="#FEFEF7" />
+    <rect x="0" y="27" width="49" height="21" fill="#FEFEF7" />
+    <rect x="55" y="27" width="49" height="21" fill="#FEFEF7" />
+    <rect x="165" y="27" width="49" height="21" fill="#FEFEF7" />
+    <rect x="220" y="27" width="49" height="21" fill="#FEFEF7" />
+    <rect x="0" y="54" width="49" height="21" fill="#FEFEF7" />
+    <rect x="110" y="54" width="49" height="21" fill="#FEFEF7" />
+    <rect x="220" y="54" width="49" height="21" fill="#FEFEF7" />
+    <rect x="0" y="81" width="49" height="21" fill="#FEFEF7" />
+    <rect x="110" y="81" width="49" height="21" fill="#FEFEF7" />
+    <rect x="220" y="81" width="49" height="21" fill="#FEFEF7" />
+    <rect x="0" y="108" width="49" height="21" fill="#FEFEF7" />
+    <rect x="220" y="108" width="49" height="21" fill="#FEFEF7" />
+    <rect x="0" y="135" width="49" height="21" fill="#FEFEF7" />
+    <rect x="220" y="135" width="49" height="21" fill="#FEFEF7" />
+    <rect x="0" y="162" width="49" height="21" fill="#FEFEF7" />
+    <rect x="220" y="162" width="49" height="21" fill="#FEFEF7" />
+    <rect x="338" y="0" width="49" height="21" fill="#366CC5" />
+    <rect x="393" y="0" width="49" height="21" fill="#366CC5" />
+    <rect x="448" y="0" width="49" height="21" fill="#366CC5" />
+    <rect x="503" y="0" width="49" height="21" fill="#366CC5" />
+    <rect x="558" y="0" width="49" height="21" fill="#366CC5" />
+    <rect x="448" y="27" width="49" height="21" fill="#366CC5" />
+    <rect x="448" y="54" width="49" height="21" fill="#366CC5" />
+    <rect x="448" y="81" width="49" height="21" fill="#366CC5" />
+    <rect x="448" y="108" width="49" height="21" fill="#366CC5" />
+    <rect x="448" y="135" width="49" height="21" fill="#366CC5" />
+    <rect x="338" y="162" width="49" height="21" fill="#366CC5" />
+    <rect x="393" y="162" width="49" height="21" fill="#366CC5" />
+    <rect x="448" y="162" width="49" height="21" fill="#366CC5" />
+    <rect x="503" y="162" width="49" height="21" fill="#366CC5" />
+    <rect x="558" y="162" width="49" height="21" fill="#366CC5" />
+    <rect x="731" y="0" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="786" y="0" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="841" y="0" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="676" y="27" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="896" y="27" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="676" y="54" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="896" y="54" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="676" y="81" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="731" y="81" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="786" y="81" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="841" y="81" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="896" y="81" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="676" y="108" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="896" y="108" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="676" y="135" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="896" y="135" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="676" y="162" width="49" height="21" fill="url(#mia-blue-dark)" />
+    <rect x="896" y="162" width="49" height="21" fill="url(#mia-blue-dark)" />
+  </g>
+</svg>
