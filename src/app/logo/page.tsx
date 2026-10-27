@@ -12,7 +12,8 @@ interface LogoItem {
   svgFile: string;
   pngFile: string;
   dimensions: string;
-  dark?: boolean;
+  themeBadge: string;
+  previewBg: "white" | "dark" | "glass" | "paper";
   featured?: boolean;
   badge?: string;
 }
@@ -26,7 +27,8 @@ const logoAssets: LogoItem[] = [
     svgFile: "/logo.svg",
     pngFile: "/logo.png",
     dimensions: "280 × 64 (Vector) / 1120 × 256 (PNG)",
-    dark: false,
+    themeBadge: "Light Theme",
+    previewBg: "paper",
   },
   {
     id: "logo-dark",
@@ -36,7 +38,8 @@ const logoAssets: LogoItem[] = [
     svgFile: "/logo-dark.svg",
     pngFile: "/logo-dark.png",
     dimensions: "280 × 64 (Vector) / 1120 × 256 (PNG)",
-    dark: true,
+    themeBadge: "Dark Theme",
+    previewBg: "dark",
   },
   {
     id: "mark-blue",
@@ -46,7 +49,8 @@ const logoAssets: LogoItem[] = [
     svgFile: "/logo-mark.svg",
     pngFile: "/logo-mark.png",
     dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
-    dark: false,
+    themeBadge: "Light Theme",
+    previewBg: "white",
   },
   {
     id: "mark-glass",
@@ -56,7 +60,8 @@ const logoAssets: LogoItem[] = [
     svgFile: "/logo-glass.svg",
     pngFile: "/logo-glass.png",
     dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
-    dark: false,
+    themeBadge: "Glass Edition",
+    previewBg: "glass",
     featured: true,
     badge: "Glass Edition",
   },
@@ -68,7 +73,8 @@ const logoAssets: LogoItem[] = [
     svgFile: "/logo-mark-dark.svg",
     pngFile: "/logo-mark-dark.png",
     dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
-    dark: true,
+    themeBadge: "Dark Theme",
+    previewBg: "white", // Clean white background so the dark icon tile is 100% visible!
   },
   {
     id: "wordmark-light",
@@ -78,7 +84,8 @@ const logoAssets: LogoItem[] = [
     svgFile: "/mia-wordmark.svg",
     pngFile: "/mia-wordmark.png",
     dimensions: "1000 × 200 (Vector) / 2000 × 400 (PNG)",
-    dark: false,
+    themeBadge: "Light Theme",
+    previewBg: "paper",
   },
   {
     id: "wordmark-dark",
@@ -88,7 +95,8 @@ const logoAssets: LogoItem[] = [
     svgFile: "/mia-wordmark-dark.svg",
     pngFile: "/mia-wordmark-dark.png",
     dimensions: "1000 × 200 (Vector) / 2000 × 400 (PNG)",
-    dark: true,
+    themeBadge: "Dark Theme",
+    previewBg: "dark",
   },
 ];
 
@@ -146,14 +154,16 @@ export default function LogoDownloadPage() {
                 logo.featured ? "border-[#366CC5] ring-2 ring-[#366CC5]/20" : "border-[#030302]/15"
               }`}
             >
-              {/* Preview Area */}
+              {/* Preview Area with Custom High-Contrast Background */}
               <div
                 className={`p-10 flex items-center justify-center min-h-[220px] relative ${
-                  logo.dark
+                  logo.previewBg === "dark"
                     ? "bg-[#030302] border-b border-white/10"
-                    : logo.featured
+                    : logo.previewBg === "glass"
                     ? "bg-gradient-to-br from-[#F0F6FE] to-[#E3EEFC] border-b border-[#366CC5]/20"
-                    : "bg-[#F7F7F0] border-b border-[#030302]/10"
+                    : logo.previewBg === "paper"
+                    ? "bg-[#F7F7F0] border-b border-[#030302]/10"
+                    : "bg-white border-b border-[#030302]/10"
                 }`}
               >
                 {logo.badge && (
@@ -178,7 +188,7 @@ export default function LogoDownloadPage() {
                       <span>{logo.title}</span>
                     </h3>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#030302]/5 text-[#030302]/65">
-                      {logo.dark ? "Dark Theme" : "Light Theme"}
+                      {logo.themeBadge}
                     </span>
                   </div>
                   <p className="text-xs text-[#030302]/65 mt-1">{logo.description}</p>

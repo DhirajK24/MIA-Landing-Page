@@ -48,20 +48,45 @@ const logoDarkSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64
   </text>
 </svg>`;
 
+// App Icon Signature Blue with ambient depth
 const logoMarkSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
   <defs>
     <linearGradient id="blueTile" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#3A82F7"/>
       <stop offset="100%" stop-color="#1B63D8"/>
     </linearGradient>
+    <filter id="iconShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#1B63D8" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
   </defs>
-  <rect x="28" y="24" width="456" height="456" rx="108" fill="url(#blueTile)"/>
+  <g filter="url(#iconShadow)">
+    <rect x="28" y="24" width="456" height="456" rx="108" fill="url(#blueTile)"/>
+  </g>
   <g>${generateScaledBlocks("#FFFFFF")}</g>
 </svg>`;
 
+// App Icon Dark System with ambient shadow for high contrast on light/white background
 const logoMarkDarkSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
-  <rect x="28" y="24" width="456" height="456" rx="108" fill="#0A0F1D"/>
-  <g>${generateScaledBlocks("#FFFFFF")}</g>
+  <defs>
+    <linearGradient id="darkTileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#070A12"/>
+    </linearGradient>
+    <linearGradient id="darkTileBorder" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#374151" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1F2937" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="darkShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#000000" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#darkShadow)">
+    <rect x="28" y="24" width="456" height="456" rx="108" fill="url(#darkTileGrad)"/>
+    <rect x="28" y="24" width="456" height="456" rx="108" stroke="url(#darkTileBorder)" stroke-width="2"/>
+  </g>
+  <g>${generateScaledBlocks("#FEFEF7")}</g>
 </svg>`;
 
 // 2. Large Pixel Wordmark
@@ -108,7 +133,7 @@ function generateWordmarkSvg(inverted = false) {
 </svg>`;
 }
 
-// 3. 12th Glass (Light) App Icon (512x512)
+// 3. Frosted Glass App Icon (512x512)
 const logoGlassSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
   <defs>
     <linearGradient id="glassBg" x1="0%" y1="0%" x2="100%" y2="100%">
