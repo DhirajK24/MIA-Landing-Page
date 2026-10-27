@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Check, Copy, Download, Sparkles, Layers } from "lucide-react";
+import { ArrowLeft, Check, Copy, Download, Sparkles } from "lucide-react";
 
 interface LogoItem {
   id: string;
+  number: string;
   title: string;
   description: string;
   svgFile: string;
@@ -18,36 +19,8 @@ interface LogoItem {
 
 const logoAssets: LogoItem[] = [
   {
-    id: "mark-glass",
-    title: "12. Glass (Light) App Icon",
-    description: "Modern frosted translucent glass icon with glossy specular sheen, ambient drop shadow, and vibrant MIA blue data blocks.",
-    svgFile: "/logo-glass.svg",
-    pngFile: "/logo-glass.png",
-    dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
-    dark: false,
-    featured: true,
-    badge: "12th Variation",
-  },
-  {
-    id: "mark-blue",
-    title: "1. Blue (Original) App Icon",
-    description: "Square app icon & favicon with the 13-rect pixel matrix on vibrant MIA blue background.",
-    svgFile: "/logo-mark.svg",
-    pngFile: "/logo-mark.png",
-    dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
-    dark: false,
-  },
-  {
-    id: "mark-dark",
-    title: "2. Dark App Icon",
-    description: "Square dark navy badge with cream-white pixel matrix, matching the hero system icon.",
-    svgFile: "/logo-mark-dark.svg",
-    pngFile: "/logo-mark-dark.png",
-    dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
-    dark: true,
-  },
-  {
     id: "logo-light",
+    number: "01",
     title: "Brand Logo (Primary / Light)",
     description: "Complete horizontal lockup: blue pixel badge and ink black wordmark with red accent slash.",
     svgFile: "/logo.svg",
@@ -57,6 +30,7 @@ const logoAssets: LogoItem[] = [
   },
   {
     id: "logo-dark",
+    number: "02",
     title: "Brand Logo (Inverted / Dark)",
     description: "Complete horizontal lockup for dark surfaces with cream-white typography.",
     svgFile: "/logo-dark.svg",
@@ -65,7 +39,40 @@ const logoAssets: LogoItem[] = [
     dark: true,
   },
   {
+    id: "mark-blue",
+    number: "03",
+    title: "App Icon (Signature Blue)",
+    description: "Square app icon & favicon with the 13-rect pixel matrix on vibrant MIA blue background.",
+    svgFile: "/logo-mark.svg",
+    pngFile: "/logo-mark.png",
+    dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
+    dark: false,
+  },
+  {
+    id: "mark-glass",
+    number: "04",
+    title: "App Icon (Frosted Glass)",
+    description: "Modern frosted translucent glass icon with glossy specular sheen, ambient drop shadow, and vibrant MIA blue data blocks.",
+    svgFile: "/logo-glass.svg",
+    pngFile: "/logo-glass.png",
+    dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
+    dark: false,
+    featured: true,
+    badge: "Glass Edition",
+  },
+  {
+    id: "mark-dark",
+    number: "05",
+    title: "App Icon (Dark System)",
+    description: "Square dark navy badge with cream-white pixel matrix, matching the hero system icon.",
+    svgFile: "/logo-mark-dark.svg",
+    pngFile: "/logo-mark-dark.png",
+    dimensions: "512 × 512 (Vector) / 1024 × 1024 (PNG)",
+    dark: true,
+  },
+  {
     id: "wordmark-light",
+    number: "06",
     title: "Hero Pixel Wordmark (Light)",
     description: "Large pixel art 'MIA' display mark with dark M, blue I, and gradient A.",
     svgFile: "/mia-wordmark.svg",
@@ -75,6 +82,7 @@ const logoAssets: LogoItem[] = [
   },
   {
     id: "wordmark-dark",
+    number: "07",
     title: "Footer Pixel Wordmark (Inverted)",
     description: "Large pixel art 'MIA' display mark with cream-white M for dark backgrounds.",
     svgFile: "/mia-wordmark-dark.svg",
@@ -82,22 +90,6 @@ const logoAssets: LogoItem[] = [
     dimensions: "1000 × 200 (Vector) / 2000 × 400 (PNG)",
     dark: true,
   },
-];
-
-// 12 App Icon Styles
-const iconVariations = [
-  { id: 1, name: "1. Blue (Original)", bg: "linear-gradient(135deg, #2F80ED 0%, #1B63D8 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 2, name: "2. Dark", bg: "linear-gradient(135deg, #090D16 0%, #111827 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 3, name: "3. Purple", bg: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 4, name: "4. Pink", bg: "linear-gradient(135deg, #E11D48 0%, #BE123C 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 5, name: "5. Green", bg: "linear-gradient(135deg, #10B981 0%, #047857 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 6, name: "6. Teal", bg: "linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 7, name: "7. Orange", bg: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 8, name: "8. Red", bg: "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 9, name: "9. Yellow", bg: "linear-gradient(135deg, #FACC15 0%, #EAB308 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 10, name: "10. Black & White", bg: "#FFFFFF", fg: "#090D16", border: "rgba(0,0,0,0.12)" },
-  { id: 11, name: "11. Gradient", bg: "linear-gradient(135deg, #2563EB 0%, #9333EA 50%, #F43F5E 100%)", fg: "#FFFFFF", border: "transparent" },
-  { id: 12, name: "12. Glass (Light)", bg: "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(226,238,252,0.9) 100%)", fg: "linear-gradient(180deg, #3A84F7 0%, #1B63D8 100%)", border: "rgba(155, 196, 245, 0.7)", glass: true },
 ];
 
 export default function LogoDownloadPage() {
@@ -132,7 +124,7 @@ export default function LogoDownloadPage() {
               MIA Brand Assets & Logos
             </h1>
             <p className="text-sm md:text-base text-[#030302]/65 mt-2">
-              Official vectors (SVG) and high-resolution raster files (PNG), including the <strong>12. Glass (Light)</strong> edition.
+              Official vectors (SVG) and high-resolution raster files (PNG), including the <strong>Frosted Glass</strong> edition.
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -182,7 +174,8 @@ export default function LogoDownloadPage() {
                 <div>
                   <div className="flex items-center justify-between">
                     <h3 className="font-semibold text-lg text-[#030302] flex items-center gap-2">
-                      {logo.title}
+                      <span className="text-[#366CC5] font-mono text-sm">[{logo.number}]</span>
+                      <span>{logo.title}</span>
                     </h3>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#030302]/5 text-[#030302]/65">
                       {logo.dark ? "Dark Theme" : "Light Theme"}
@@ -240,102 +233,6 @@ export default function LogoDownloadPage() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* 12 Color Variations Grid */}
-        <div className="mt-16 pt-10 border-t border-[#030302]/15">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <span className="text-xs font-mono text-[#366CC5] uppercase tracking-wider font-semibold flex items-center gap-1.5">
-                <Layers size={13} /> Complete Icon Palette
-              </span>
-              <h2 className="text-2xl font-semibold tracking-tight text-[#030302] mt-1">
-                All 12 App Icon Variations
-              </h2>
-            </div>
-            <span className="text-xs font-mono text-[#030302]/50">
-              12 Styles Available
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {iconVariations.map((icon) => (
-              <div
-                key={icon.id}
-                className={`p-3.5 rounded-xl border flex flex-col items-center text-center transition ${
-                  icon.id === 12
-                    ? "border-[#366CC5] bg-[#366CC5]/5 shadow-sm ring-2 ring-[#366CC5]/20"
-                    : "border-[#030302]/10 bg-white hover:border-[#030302]/25"
-                }`}
-              >
-                {/* Mini Render of Icon */}
-                <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center p-2.5 shadow-sm relative overflow-hidden"
-                  style={{
-                    background: icon.bg,
-                    border: `1px solid ${icon.border}`,
-                  }}
-                >
-                  {/* Frosted sheen for glass */}
-                  {icon.glass && (
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-transparent pointer-events-none" />
-                  )}
-                  {/* 13 Rectangular Blocks SVG */}
-                  <svg viewBox="0 0 54 54" className="w-11 h-11 relative z-10" fill="none">
-                    <g fill={icon.id === 12 ? "#2F80ED" : icon.fg}>
-                      {[
-                        [0, 0], [1, 0], [0, 1], [2, 1], [0, 2], [1, 2], [2, 2],
-                        [1, 3], [2, 3], [1, 4], [2, 4], [1, 5], [2, 5],
-                      ].map(([x, y], idx) => (
-                        <rect
-                          key={idx}
-                          x={x * 15 + 6}
-                          y={y * 8 + 4}
-                          width="13"
-                          height="6"
-                          rx="1"
-                        />
-                      ))}
-                    </g>
-                  </svg>
-                </div>
-
-                <span className="text-[11px] font-medium text-[#030302] mt-2.5 leading-snug">
-                  {icon.name}
-                </span>
-
-                {icon.id === 12 ? (
-                  <a
-                    href="/logo-glass.svg"
-                    download
-                    className="mt-2 inline-flex items-center gap-1 text-[10px] font-mono text-[#366CC5] font-semibold hover:underline"
-                  >
-                    <Download size={10} /> Get SVG
-                  </a>
-                ) : icon.id === 1 ? (
-                  <a
-                    href="/logo-mark.svg"
-                    download
-                    className="mt-2 inline-flex items-center gap-1 text-[10px] font-mono text-[#030302]/60 hover:text-[#366CC5]"
-                  >
-                    <Download size={10} /> Get SVG
-                  </a>
-                ) : icon.id === 2 ? (
-                  <a
-                    href="/logo-mark-dark.svg"
-                    download
-                    className="mt-2 inline-flex items-center gap-1 text-[10px] font-mono text-[#030302]/60 hover:text-[#366CC5]"
-                  >
-                    <Download size={10} /> Get SVG
-                  </a>
-                ) : (
-                  <span className="text-[9px] font-mono text-[#030302]/40 mt-2">
-                    Palette Style
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Footer info */}
